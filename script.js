@@ -95,6 +95,7 @@ const previousOperandTextElement = document.querySelector('[data-previous-operan
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+const audio = new Audio("audio/1.mp3");
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -113,6 +114,7 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', button => {
   calculator.compute()
   calculator.updateDisplay()
+  audio.play()
 })
 
 allClearButton.addEventListener('click', button => {
